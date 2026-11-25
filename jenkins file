@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'your-dockerhub-username/jenkins-demo'
-        DOCKER_CREDENTIALS = 'dockerhub-credentials'
+        DOCKER_IMAGE = 'manishgowda2004/exp5'
+        DOCKER_CREDENTIALS = 'dockerhub_credentials'
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-credentials',
+                        credentialsId: 'dockerhub_credentials',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )
